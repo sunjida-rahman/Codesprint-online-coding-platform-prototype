@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeSprint - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+/>
+
+  <style>
+    /* Custom styles */
+    .feature-icon {
+      font-size: 3rem;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="bg-light py-5 text-center">
+    <div class="container">
+      <h1 class="display-4">Welcome to CodeSprint</h1>
+      <p class="lead">Empowering coders through competitive programming</p>
+      <a href="login.html" id="actionButton" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Platform Features</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mb-3">🏁</div>
+          <h5>Contest Management</h5>
+          <p>Easily create, manage, and track coding contests.</p>
+          <a href="contests.html" class="btn btn-primary btn-sm mt-2">View Contests</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mb-3">🧑‍⚖️</div>
+          
+          <h5><a href="judgePanel.html" class="text-decoration-none text-dark">Judge Panel</a></h5>
+          <p>Evaluate submissions and provide feedback efficiently.</p>
+        </div>
+
+       <div class="col-md-4 text-center">
+  <div class="feature-icon mb-3">
+    <i class="bi bi-code-slash" style="font-size: 2rem; color: #007bff;"></i>
+  </div>
+  <h5> <a href="practice.html" class="btn btn-primary btn-sm mt-2">Practice</a></h5>
+  <p>Sharpen your coding skills with endless problem sets.</p>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      &copy; 2025 CodeSprint. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const actionButton = document.getElementById("actionButton");
+
+    // Check if user is logged in
+    const userId = localStorage.getItem("userId");
+
+    if (userId) {
+      // If logged in, change button to LOGOUT
+      actionButton.textContent = "Logout";
+      actionButton.classList.remove("btn-primary");
+      actionButton.classList.add("btn-danger");
+      actionButton.href = "#"; // prevent default link
+
+      actionButton.addEventListener("click", () => {
+        // Clear login data
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userRole");
+        localStorage.removeItem("username");
+
+        // Refresh page or revert button
+        window.location.reload();
+      });
+    }
+  </script>
+</body>
+</html>

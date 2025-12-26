@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Scoreboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    });
+</script>
+<link rel="stylesheet" href="navbar.css">
+  <div class="container mt-4">
+    <h2>🏆 Live Scoreboard</h2>
+    <table class="table table-bordered table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>User</th>
+          <th>Problems Solved</th>
+          <th>Total Points</th>
+          <th>Last Submission</th>
+        </tr>
+      </thead>
+      <tbody id="scoreboardBody">
+        <tr><td colspan="5">Loading scoreboard...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="scoreboard.js"></script>
+</body>
+</html>

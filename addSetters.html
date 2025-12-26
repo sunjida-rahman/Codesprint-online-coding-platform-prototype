@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Setters - CodeSprint</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container my-4">
+    <h2>Add Contest / Problem Setters</h2>
+
+    <form id="contestSetterForm" class="mb-4">
+      <h4>Contest Setter</h4>
+      <input type="hidden" id="contestId" value="">
+      <div class="mb-3">
+        <label>User ID:</label>
+        <input type="number" id="contestSetterUserId" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Contest Setter</button>
+    </form>
+
+    <form id="problemSetterForm">
+      <h4>Problem Setter</h4>
+      <div class="mb-3">
+        <label>Problem ID:</label>
+        <input type="number" id="problemId" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label>User ID:</label>
+        <input type="number" id="problemSetterUserId" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Problem Setter</button>
+    </form>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="addSetters.js"></script>
+</body>
+</html>

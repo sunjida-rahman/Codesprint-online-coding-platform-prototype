@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About CodeSprint</title>
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar will load here -->
+  <div id="navbar-container"></div>
+
+  <div class="container">
+    <h2>About CodeSprint</h2>
+    <p>
+      CodeSprint is an online competitive programming platform where students and programmers can 
+      participate in live contests, solve problems, and track their progress. Our goal is to 
+      provide an environment similar to platforms like Codeforces, CodeChef, and LeetCode but 
+      customized for academic and team-based contests.
+    </p>
+
+    <p>
+      Features include:
+      <ul>
+        <li>Live contest hosting with scoreboards</li>
+        <li>Problem-solving environment with multiple languages</li>
+        <li>User profiles and submission tracking</li>
+        <li>Fair and transparent evaluation system</li>
+      </ul>
+    </p>
+
+    <p>
+      This project was developed as part of an academic initiative to help students 
+      prepare for programming contests and sharpen their problem-solving skills.
+    </p>
+  </div>
+
+  <script>
+    // Load navbar dynamically
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      });
+  </script>
+</body>
+</html>

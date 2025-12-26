@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Submissions</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .verdict.Accepted { color: #28a745; font-weight: bold; }
+    .verdict["Wrong Answer"] { color: #dc3545; font-weight: bold; }
+    .verdict.Pending { color: #ffc107; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>My Submissions</h2>
+      <!-- 🔹 Button to go to scoreboard -->
+      <button id="scoreboardBtn" class="btn btn-primary">View Scoreboard</button>
+    </div>
+
+    <table class="table table-bordered" id="submissionsTable">
+      <thead>
+        <tr>
+          <th>Submission ID</th>
+          <th>Problem</th>
+          <th>Contest</th>
+          <th>Language</th>
+          <th>Verdict</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="6">Loading submissions...</td></tr>
+      </tbody>
+    </table>
+  </div>
+<div id="navbar-container"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="submissions.js"></script>
+
+  <script>
+    // 🔹 Get contestId from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const contestId = urlParams.get("contestId");
+
+    // 🔹 Redirect to scoreboard page when button clicked
+    document.getElementById("scoreboardBtn").addEventListener("click", () => {
+      window.location.href = `scoreboard.html?contestId=${contestId}`;
+    });
+  </script>
+</body>
+</html>
